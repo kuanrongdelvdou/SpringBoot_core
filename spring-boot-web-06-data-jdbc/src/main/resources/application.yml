@@ -1,0 +1,27 @@
+#配置 jdbc 数据源
+spring:
+  datasource:
+    # 基本配置
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.0.107:3306/cloudDB01
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    
+    # 数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    
+#server.servlet.contextPath=/crud
+server:
+  servlet:
+    contextPath: /crud

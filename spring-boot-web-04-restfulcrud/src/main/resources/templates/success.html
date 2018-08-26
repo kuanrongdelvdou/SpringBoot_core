@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> Welcome to success Page!</h1>
+	
+	<!-- th:text 将 div 里面的文本内容设置为指定的值  -->
+	<div th:text="${hello}">成功页面!</div>
+	
+	<!--不转义  -->
+	<div th:utext="${hello}"></div>
+	
+	<hr/>
+	<!--th:each 每次遍历都会生成当前这个标签 : 3 个 h4 -->
+	<h4 th:text="${user}" th:each="user:${users}"></h4>
+	<hr/>
+	<h4>
+		<span th:each="user:${users}">[[${user}]]</span>
+	</h4>	
+	
+</body>
+</html>
